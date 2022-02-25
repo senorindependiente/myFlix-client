@@ -946,18 +946,21 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactDom = require("react-dom");
 var _reactDomDefault = parcelHelpers.interopDefault(_reactDom);
 var _mainView = require("./components/main-view/main-view");
+<<<<<<< Updated upstream
 var _mainViewDefault = parcelHelpers.interopDefault(_mainView);
+=======
+>>>>>>> Stashed changes
 // Import statement to indicate that you need to bundle `./index.scss`
 var _indexScss = require("./index.scss");
 // Main component (will eventually use all the others)
 class MyFlixApplication extends _reactDefault.default.Component {
     render() {
-        return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
-            className: "my-flix",
+        return(/*#__PURE__*/ _jsxRuntime.jsx(MainView, {
             __source: {
                 fileName: "src/index.jsx",
                 lineNumber: 13
             },
+<<<<<<< Updated upstream
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsx(_mainViewDefault.default, {
                 __source: {
@@ -966,6 +969,9 @@ class MyFlixApplication extends _reactDefault.default.Component {
                 },
                 __self: this
             })
+=======
+            __self: this
+>>>>>>> Stashed changes
         }));
     }
 }
@@ -22746,6 +22752,7 @@ $parcel$ReactRefreshHelpers$35bf.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+<<<<<<< Updated upstream
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
@@ -22828,12 +22835,58 @@ class MainView extends _reactDefault.default.Component {
     }
 }
 exports.default = MainView;
+=======
+parcelHelpers.export(exports, "Mainview", ()=>Mainview
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+class Mainview extends _reactDefault.default.Component {
+    render() {
+        return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
+            className: "main-view",
+            __source: {
+                fileName: "src/components/main-view/main-view.jsx",
+                lineNumber: 7
+            },
+            __self: this,
+            children: [
+                /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                    __source: {
+                        fileName: "src/components/main-view/main-view.jsx",
+                        lineNumber: 8
+                    },
+                    __self: this,
+                    children: "Inception"
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                    __source: {
+                        fileName: "src/components/main-view/main-view.jsx",
+                        lineNumber: 9
+                    },
+                    __self: this,
+                    children: "The Shawshank Redemption"
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                    __source: {
+                        fileName: "src/components/main-view/main-view.jsx",
+                        lineNumber: 10
+                    },
+                    __self: this,
+                    children: "Gladiator"
+                })
+            ]
+        }));
+    }
+}
+>>>>>>> Stashed changes
 
   $parcel$ReactRefreshHelpers$35bf.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
+<<<<<<< Updated upstream
 },{"react/jsx-runtime":"8xIwr","react":"6TuXu","../movie-card/movie-card":"6EiBJ","@parcel/transformer-js/src/esmodule-helpers.js":"817f3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"40h0D","../movie-view/movie-view":"ikZdr"}],"6EiBJ":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$4249 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
@@ -22870,6 +22923,8 @@ exports.default = MovieCard;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
+=======
+>>>>>>> Stashed changes
 },{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"817f3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"40h0D"}],"817f3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
@@ -23022,6 +23077,7 @@ function registerExportsForReactRefresh(module) {
     }
 }
 
+<<<<<<< Updated upstream
 },{"react-refresh/runtime":"2U3vs"}],"ikZdr":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$3741 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
@@ -23147,5 +23203,8 @@ exports.default = MovieView;
   window.$RefreshSig$ = prevRefreshSig;
 }
 },{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"817f3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"40h0D"}],"jUTZ8":[function() {},{}]},["lhfnz","8EMuS","dLPEP"], "dLPEP", "parcelRequireaec4")
+=======
+},{"react-refresh/runtime":"2U3vs"}],"jUTZ8":[function() {},{}]},["lhfnz","8EMuS","dLPEP"], "dLPEP", "parcelRequireaec4")
+>>>>>>> Stashed changes
 
 //# sourceMappingURL=index.fcff31a1.js.map
