@@ -10,9 +10,15 @@ class MovieView extends React.Component {
         };
       }
 
+      componentDidMount() {
+        document.addEventListener("keypress", event => {
+          console.log(event.key);
+        });
+      }
+
 
   render() {
-    const { movie , onBackClick} = this.props; //shit would in a function based component just "props" as a parameter in the function ot access data as an object
+    const { movie , onBackClick} = this.props; //this would in a function based component just "props" as a parameter in the function ot access data as an object
 
     return (
       <div className="movie-view">

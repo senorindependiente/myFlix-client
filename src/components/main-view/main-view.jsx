@@ -1,32 +1,33 @@
 import React from "react";
+import axios from "axios";
 import MovieCard from "../movie-card/movie-card";
 import MovieView from "../movie-view/movie-view";
+
 class MainView extends React.Component {
   constructor() {
     super();
     this.state = {
-      movies: [
-        {
-          _id: 1,
-          Title: "Inception",
-          Description: "desc1...",
-          ImagePath: "...",
-        },
-        {
-          _id: 2,
-          Title: "The Shawshank Redemption",
-          Description: "desc2...",
-          ImagePath: "...",
-        },
-        {
-          _id: 3,
-          Title: "Gladiator",
-          Description: "desc3...",
-          ImagePath: "...",
-        },
-      ],
+      movies: [],
+      selectedMovie: null,
     };
   }
+//external libray Axios to fetch external API, in this case MongoDB database from host heroku (method componentDidMount is used)
+  componentDidMount() {
+    axios
+      .get("https://localhost:8080/movies")
+      .then((response) => {
+        this.setState({
+          movies: response.data,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+ 
+
+  
 
   setSelectedMovie(newSelectedMovie) {
     this.setState({
@@ -38,7 +39,7 @@ class MainView extends React.Component {
     const { movies, selectedMovie } = this.state;
 
     if (movies.length === 0)
-      return <div className="main-view">The list is empty!</div>;
+      return <div className="main-view"/>;
 
     return (
       <div className="main-view">
