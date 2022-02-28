@@ -14,7 +14,7 @@ class MainView extends React.Component {
 //external libray Axios to fetch external API, in this case MongoDB database from host heroku (method componentDidMount is used)
   componentDidMount() {
     axios
-      .get("https://localhost:8080/movies")
+      .get("http://localhost:8080/movies")
       .then((response) => {
         this.setState({
           movies: response.data,
