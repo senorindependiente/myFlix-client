@@ -1,5 +1,5 @@
 import React from "react";
-import axios from "axios";
+import axios from "axios";//importing library Axios
 import MovieCard from "../movie-card/movie-card";
 import MovieView from "../movie-view/movie-view";
 
@@ -11,8 +11,9 @@ class MainView extends React.Component {
       selectedMovie: null,
     };
   }
-//external libray Axios to fetch external API, in this case MongoDB database from host heroku (method componentDidMount is used)
-  componentDidMount() {
+//external libray Axios to fetch external API, in this case MongoDB database  "myFlixDB" hosted on 8080 (method componentDidMount is used)
+ //componentDidMount(), here you place code to perform async tasks such as ajax requests or adding event listeners
+componentDidMount() {
     axios
       .get("http://localhost:8080/movies")
       .then((response) => {

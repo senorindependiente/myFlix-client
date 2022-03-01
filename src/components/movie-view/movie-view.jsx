@@ -2,24 +2,21 @@ import React from "react";
 
 class MovieView extends React.Component {
 
-    constructor() {
-        super();
-        this.state = {
-          movies: [],
-          selectedMovie: null
-        };
-      }
-
+    
+keypressCallback(event){
+ alert(event.key)
+}
       componentDidMount() {
-        document.addEventListener("keypress", event => {
-          console.log(event.key);
-        });
-      }
-
+        document.addEventListener("keypress", this.keypressCallback)
+        };
+      
+componentWillUnmount(){
+  document.removeEventListener("keypress", this.keypressCallback)
+}
+      
 
   render() {
     const { movie , onBackClick} = this.props; //this would in a function based component just "props" as a parameter in the function ot access data as an object
-
     return (
       <div className="movie-view">
         <div className="movie-poster">
