@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import "./login-view.scss";
 
-export function LoginView(props) {
+function LoginView(props) {
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -9,13 +11,15 @@ export function LoginView(props) {
     console.log(username, password);
     /* Send a request to the server for authentication */
     /* then call props.onLoggedIn(username) */
-    // props.onLoggedIn(username);
+    props.onLoggedIn(username);
   };
 
   return (
-    <form>
+  <div>
+
+    <form> 
       <label>
-        Username:{" "}
+        Username:
         <input
           type="text"
           value={username}
@@ -34,5 +38,14 @@ export function LoginView(props) {
         Submit
       </button>
     </form>
+<button>Register</button>
+</div>
+   
   );
 }
+
+LoginView.propTypes = {
+    onLoggedIn: PropTypes.func.isRequired,
+  };
+
+export default LoginView;
