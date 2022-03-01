@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./login-view.scss";
 
 function LoginView(props) {
-
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -15,37 +14,39 @@ function LoginView(props) {
   };
 
   return (
-  <div>
-
-    <form> 
-      <label>
-        Username:
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-      </label>
-      <label>
-        Password:
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </label>
-      <button type="submit" onClick={handleSubmit}>
-        Submit
-      </button>
-    </form>
-<button>Register</button>
-</div>
-   
+    <div>
+      <form>
+        <label>
+          Username:
+          <input
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </label>
+        <label>
+          Password:
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </label>
+        <button type="submit" onClick={handleSubmit}>
+          Submit
+        </button>
+      </form>
+      <button>Register</button>
+    </div>
   );
 }
 
 LoginView.propTypes = {
-    onLoggedIn: PropTypes.func.isRequired,
-  };
+  user: PropTypes.shape({
+    Username: PropTypes.string.isRequired,
+    Password: PropTypes.string.isRequired,
+  }).isRequired,
+  onRegistration: PropTypes.func.isRequired,
+};
 
 export default LoginView;

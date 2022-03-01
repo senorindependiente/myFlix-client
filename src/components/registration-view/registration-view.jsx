@@ -1,4 +1,4 @@
-import React, { useState }  from "react";
+import React, { useState } from "react";
 import "./registration-view.scss";
 
 function RegistrationView() {
@@ -10,8 +10,7 @@ function RegistrationView() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(username, password, email, birthday);
-   props.onRegistration(register)
-    
+    props.onRegistration(username);
   };
 
   return (
@@ -49,7 +48,6 @@ function RegistrationView() {
             onChange={(e) => setBirthday(e.target.value)}
           />
         </label>
-
         <button type="submit">Submit</button>
       </form>
     </div>
@@ -57,7 +55,7 @@ function RegistrationView() {
 }
 
 RegistrationView.propTypes = {
-  Users: PropTypes.shape({
+  register: PropTypes.shape({
     Username: PropTypes.string.isRequired,
     Password: PropTypes.string.isRequired,
     Email: PropTypes.string.isRequired,
