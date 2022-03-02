@@ -77,7 +77,6 @@ class MainView extends React.Component {
 
     return (
       <div>
-        <p>hello</p>
       <div className="main-view">
         {selectedMovie ? (
           <MovieView
