@@ -34,7 +34,7 @@ function LoginView(props) {
         Submit
       </Button>
       </Form>
-      <button>Register</button>
+      <Button>Register</Button>
     </div>
   );
 }
