@@ -20,10 +20,10 @@ class MainView extends React.Component {
   //componentDidMount(), here you place code to perform async tasks such as ajax requests or adding event listeners
   componentDidMount() {
     axios
-      .get("http://localhost:8080/movies")
+      .get("https://movieapiapp.herokuapp.com/movies")
       .then((response) => {
         this.setState({
-          movies: response.data,
+          movies: response.data
         });
       })
       .catch((error) => {
@@ -53,11 +53,12 @@ class MainView extends React.Component {
     });
   }
 
+
   render() {
     const { movies, selectedMovie, register, user } = this.state;
 
     /* If user is not registered, the RegistrationView is rendered.*/
-
+  
     if (!register)
       return (
         <RegistrationView
@@ -72,9 +73,11 @@ class MainView extends React.Component {
 
     // Before the movies have been loaded
 
-    if (movies.length === 0) return <div className="main-view" />;
+    if (movies.length === 0) return (<div className="main-view" />);
 
     return (
+      <div>
+        <p>hello</p>
       <div className="main-view">
         {selectedMovie ? (
           <MovieView
@@ -94,6 +97,7 @@ class MainView extends React.Component {
             />
           ))
         )}
+      </div>
       </div>
     );
   }

@@ -1,7 +1,11 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import "./login-view.scss";
 
 function LoginView(props) {
+
+  
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -46,7 +50,7 @@ LoginView.propTypes = {
     Username: PropTypes.string.isRequired,
     Password: PropTypes.string.isRequired,
   }).isRequired,
-  onRegistration: PropTypes.func.isRequired,
+  onLoggedIn: PropTypes.func.isRequired,
 };
 
 export default LoginView;

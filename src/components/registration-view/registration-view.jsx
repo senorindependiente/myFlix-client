@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./registration-view.scss";
-
-function RegistrationView() {
+import PropTypes from "prop-types";
+function RegistrationView(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
