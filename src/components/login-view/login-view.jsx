@@ -22,19 +22,20 @@ function LoginView(props) {
   return (
     <div>
       <Form>
-        <Form.Group controlId="formUsername">
-<Form.Label>Username:</Form.Label>
+        <Form.Group className="form-group" controlId="formUsername">
+<Form.Label className="form-label">Username:</Form.Label>
 <Form.Control type="text" onChange={ e =>setUsername(e.target.value)}/>
         </Form.Group>
-        <Form.Group controlId="formPassword">
-        <Form.Label>Password:</Form.Label>
+        <Form.Group className="form-group" controlId="formPassword">
+        <Form.Label className="form-label">Password:</Form.Label>
         <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
       </Form.Group>
-      <Button variant="primary" type="submit" onClick={handleSubmit}>
+      <button className="button" variant="primary" type="submit" onClick={handleSubmit}>
         Submit
-      </Button>
+      </button>
+      <button className="button2">Register</button>
       </Form>
-      <Button>Register</Button>
+      
     </div>
   );
 }

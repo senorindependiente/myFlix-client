@@ -23,15 +23,15 @@ function RegistrationView(props) {
   };
 
   return (
-    <Container>
+    <Container className="container">
       <Row>
         <Col>
           <CardGroup>
             <Card>
-              <Card.Header>Please Register</Card.Header>
+              <Card.Header className="card-header">Please Register</Card.Header>
               <Form>
                 <Form.Group>
-                  <Form.Label>Username:</Form.Label>
+                  <Form.Label className="form-label">Username:</Form.Label>
                   <Form.Control
                     type="text"
                     value={username}
@@ -41,28 +41,30 @@ function RegistrationView(props) {
                   />
                 </Form.Group>
                 <Form.Group>
-                  <Form.Label>Password: </Form.Label>
+                  <Form.Label className="form-label">Password: </Form.Label>
                   <Form.Control
                     type="text"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    required minLength={5}
+                    required
+                    minLength={5}
                     placeholder="Your password must be 5 or more characters"
                   />
                 </Form.Group>
-                <Form.Group>
-                  <Form.Label>Email:</Form.Label>
+                <Form.Group className="form-group">
+                  <Form.Label className="form-label">Email:</Form.Label>
                   <Form.Control
                     type="text"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    placeholder="Enter an Email"
+                    placeholder="Enter your Email"
+                  
                   />
                 </Form.Group>
 
                 <Form.Group>
-                  <Form.Label>Birthday:</Form.Label>
+                  <Form.Label className="form-label">Birthday:</Form.Label>
                   <Form.Control
                     type="text"
                     value={birthday}
@@ -72,7 +74,9 @@ function RegistrationView(props) {
                   />
 
                   <Form.Group>
-                    <Button type="submit">Submit</Button>
+                    <button type="submit" className="button">
+                      Submit
+                    </button>
                   </Form.Group>
                 </Form.Group>
               </Form>

@@ -1,0 +1,46 @@
+$primary-font: "Cuprum", sans-serif;
+$secondary-font: "Alfa Slab One", cursive;
+$primary-color: linear-gradient(220.55deg, #565656 0%, #181818 100%);
+$secondary-color: #fff;
+$third-color: #e2b659;
+
+@mixin buttonstyle {
+  background: $third-color;
+  color: $secondary-color;
+  border-radius: 5px;
+  padding: 0.4rem 1rem;
+  border: none;
+  margin-top: 1rem;
+  transition: 0.5s;
+}
+
+@mixin darktheme {
+  background: $primary-color;
+  color: $secondary-color;
+}
+
+* {
+  @include darktheme();
+}
+
+.movie-view {
+  font-family: $primary-font;
+
+}
+
+.movie-title {
+  font-family: $secondary-font;
+}
+
+
+
+
+.button {
+  text-decoration: none;
+
+  @include buttonstyle();
+}
+
+.button:hover {
+  opacity: 0.8;
+}
