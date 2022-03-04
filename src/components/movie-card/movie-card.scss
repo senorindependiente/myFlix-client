@@ -1,6 +1,6 @@
 $primary-font: "Cuprum", sans-serif;
 $secondary-font: "Alfa Slab One", cursive;
-$primary-color: linear-gradient(220.55deg, #565656 0%, #181818 100%);
+$primary-color: #565656;
 $secondary-color: #fff;
 $third-color: #e2b659;
 
@@ -23,16 +23,31 @@ $third-color: #e2b659;
   @include darktheme();
 }
 
-.card {
+.card,
+.card-title,
+.card-img,
+.card-text,
+.card-body {
   font-family: $primary-font;
+  
+}
 
+.maincard {
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.card
+ {
+min-height: 80%;
+}
+
+.card{
+  margin:2rem 0rem;
 }
 
 .card-title {
   font-family: $secondary-font;
 }
-
-
 
 .button a {
   text-decoration: none;

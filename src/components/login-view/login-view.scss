@@ -1,6 +1,6 @@
 $primary-font: "Cuprum", sans-serif;
 $secondary-font: "Alfa Slab One", cursive;
-$primary-color: linear-gradient(220.55deg, #565656 0%, #181818 100%);
+$primary-color: #565656;
 $secondary-color: #fff;
 $third-color: #e2b659;
 
@@ -14,6 +14,17 @@ $third-color: #e2b659;
   transition: 0.5s;
 }
 
+@mixin buttonstyle2 {
+  background: $primary-color;
+  font-family: $primary-font;
+  border-radius: 5px;
+  padding: 0.4rem 1rem;
+  border: $third-color 1px solid;
+  margin-top: 1rem;
+  margin-left:2rem;
+  transition: 0.5s;
+}
+
 @mixin darktheme {
   background: $primary-color;
   color: $secondary-color;
@@ -24,7 +35,6 @@ $third-color: #e2b659;
 }
 
 Form {
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 
   font-family: $primary-font;
 }
@@ -37,7 +47,18 @@ Form {
   @include buttonstyle();
 }
 
+.button2{
+  @include buttonstyle2();
+}
+
+
+
 .button:hover {
+  opacity: 0.8;
+}
+
+
+.button2:hover {
   opacity: 0.8;
 }
 

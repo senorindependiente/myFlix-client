@@ -26,8 +26,8 @@ function RegistrationView(props) {
     <Container className="container">
       <Row>
         <Col>
-          <CardGroup>
-            <Card>
+          <CardGroup className="card-group" >
+            <Card className="card">
               <Card.Header className="card-header">Please Register</Card.Header>
               <Form>
                 <Form.Group>
