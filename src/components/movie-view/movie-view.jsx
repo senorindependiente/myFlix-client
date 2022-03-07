@@ -1,6 +1,8 @@
 import React from "react";
 import "./movie-view.scss";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
 class MovieView extends React.Component {
   keypressCallback(event) {
     alert(event.key);
@@ -36,6 +38,14 @@ class MovieView extends React.Component {
         >
           Back
         </button>
+
+        <Link to={`/directors/${movie.Director.Name}`}>
+          <Button variant="link">Director</Button>
+        </Link>
+
+        <Link to={`/genres/${movie.Genre.Name}`}>
+          <Button variant="link">Genre</Button>
+        </Link>
       </div>
     );
   }
@@ -53,8 +63,6 @@ MovieView.propTypes = {
     Director: PropTypes.shape({
       Name: PropTypes.string.isRequired,
       Bio: PropTypes.string.isRequired,
-      Birth: PropTypes.number.isRequired,
-      Death: PropTypes.number,
     }),
   }).isRequired,
 };

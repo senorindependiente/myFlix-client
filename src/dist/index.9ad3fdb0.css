@@ -1,0 +1,169 @@
+
+* {
+  background: #565656;
+  color: #fff;
+}
+
+.container {
+  margin: 1rem 0rem;
+  height: 100vh;
+}
+
+Form {
+  font-family: "Cuprum", sans-serif;
+}
+
+.card-header {
+  color: #565656;
+  font-size: 1.4rem;
+  font-family: "Alfa Slab One", cursive;
+}
+
+.form-label {
+  margin: 1rem 0rem;
+}
+
+.button {
+  background: #e2b659;
+  border-radius: 5px;
+  padding: 0.4rem 1rem;
+  border: none;
+  margin-top: 1rem;
+  transition: 0.5s;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+input[type=text] {
+  background: #565656;
+}
+* {
+  background: #565656;
+  color: #fff;
+}
+
+Form {
+  font-family: "Cuprum", sans-serif;
+}
+
+.form-label {
+  margin: 1rem 0rem;
+}
+
+.button {
+  background: #e2b659;
+  font-family: "Cuprum", sans-serif;
+  border-radius: 5px;
+  padding: 0.4rem 1rem;
+  border: none;
+  margin-top: 1rem;
+  transition: 0.5s;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.button2 {
+  background: #565656;
+  font-family: "Cuprum", sans-serif;
+  border-radius: 5px;
+  padding: 0.4rem 1rem;
+  border: #e2b659 1px solid;
+  margin-top: 1rem;
+  margin-left: 2rem;
+  transition: 0.5s;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.button2:hover {
+  opacity: 0.8;
+}
+
+input[type=text] {
+  background: #fff;
+}
+
+input[type=password] {
+  background: #fff;
+}
+* {
+  background: #565656;
+  color: #fff;
+}
+
+.card,
+.card-title,
+.card-img,
+.card-text,
+.card-body {
+  font-family: "Cuprum", sans-serif;
+}
+
+.maincard {
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.card {
+  min-height: 80%;
+}
+
+.card {
+  margin: 2rem 0rem;
+}
+
+.card-title {
+  font-family: "Alfa Slab One", cursive;
+}
+
+.button a {
+  text-decoration: none;
+  background: #e2b659;
+  color: #fff;
+  border-radius: 5px;
+  padding: 0.4rem 1rem;
+  border: none;
+  margin-top: 1rem;
+  transition: 0.5s;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+* {
+  background: linear-gradient(220.55deg, #565656 0%, #181818 100%);
+  color: #fff;
+}
+
+.movie-view {
+  margin: 1rem;
+  font-family: "Cuprum", sans-serif;
+}
+
+.movie-title {
+  font-family: "Alfa Slab One", cursive;
+}
+
+.button {
+  text-decoration: none;
+  background: #e2b659;
+  color: #fff;
+  border-radius: 5px;
+  padding: 0.4rem 1rem;
+  border: none;
+  margin-top: 1rem;
+  transition: 0.5s;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+
+.my-flix {
+  color: steelblue;
+}
+/*# sourceMappingURL=index.9ad3fdb0.css.map */
