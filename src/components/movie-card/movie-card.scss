@@ -19,7 +19,7 @@ $third-color: #e2b659;
   color: $secondary-color;
 }
 
-* {
+*{
   @include darktheme();
 }
 

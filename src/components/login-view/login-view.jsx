@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "./login-view.scss";
-import Form from "react-bootstrap/Form";
+import {Form, Button} from "react-bootstrap";
 import axios from "axios";
 
 function LoginView(props) {
@@ -50,7 +50,8 @@ function LoginView(props) {
         >
           Submit
         </button>
-        <button className="button2">Register</button>
+
+        <button href="/register" className="button2">  <a href="/register">Register</a> </button>
       </Form>
     </div>
   );

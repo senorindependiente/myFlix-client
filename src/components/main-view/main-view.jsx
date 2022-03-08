@@ -11,7 +11,8 @@ import MovieCard from "../movie-card/movie-card";
 import MovieView from "../movie-view/movie-view";
 import DirectorView from "../director-view/director-view";
 import GenreView from "../genre-view/genre-view";
-
+import NavbarView from "../navbar-view/navbar-view";
+import ProfileView from "../profile-view/profile-view";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import NavbarView from "../navbar-view/navbar-view";
@@ -86,17 +87,6 @@ class MainView extends React.Component {
                   <MovieCard movie={m} />
                 </Col>
               ));
-            }}
-          />
-          <Route
-            path="/register"
-            render={() => {
-              if (user) return <Redirect to="/" />;
-              return (
-                <Col>
-                  <RegistrationView />
-                </Col>
-              );
             }}
           />
 
@@ -185,21 +175,6 @@ class MainView extends React.Component {
               return (
                 <Col>
                   <ProfileView
-                    movies={movies}
-                    user={user}
-                    onBackClick={() => history.goBack()}
-                  />
-                </Col>
-              );
-            }}
-          />
-          <Route
-            path={`/user-update/${user}`}
-            render={({ match, history }) => {
-              if (!user) return <Redirect to="/" />;
-              return (
-                <Col>
-                  <UserUpdate
                     movies={movies}
                     user={user}
                     onBackClick={() => history.goBack()}
