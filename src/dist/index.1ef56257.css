@@ -161,6 +161,12 @@ input[type=password] {
 .button:hover {
   opacity: 0.8;
 }
+
+
+.navbar {
+  margin-bottom: 5rem;
+  border-bottom: white 1px solid;
+}
 .my-flix {
   color: steelblue;
 }

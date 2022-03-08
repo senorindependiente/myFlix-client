@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios"; //importing library Axios
 
-import { BrowserRouter as Router, Route,useHistory} from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
 import "./main-view.scss";
 
@@ -9,11 +9,12 @@ import RegistrationView from "../registration-view/registration-view";
 import LoginView from "../login-view/login-view";
 import MovieCard from "../movie-card/movie-card";
 import MovieView from "../movie-view/movie-view";
-import DirectorView from "../DirectorView/director-view";
-import GenreView from "../GenreView/genre-view";
+import DirectorView from "../director-view/director-view";
+import GenreView from "../genre-view/genre-view";
 
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import NavbarView from "../navbar-view/navbar-view";
 class MainView extends React.Component {
   constructor() {
     super();
@@ -24,21 +25,6 @@ class MainView extends React.Component {
       user: null,
     };
   }
-
-  //external libray Axios to fetch external API, in this case MongoDB database  "myFlixDB" hosted on 8080 (method componentDidMount is used)
-  //componentDidMount(), here you place code to perform async tasks such as ajax requests or adding event listeners
-  // componentDidMount() {
-  //   axios
-  //     .get("https://movieapiapp.herokuapp.com/movies")
-  //     .then((response) => {
-  //       this.setState({
-  //         movies: response.data,
-  //       });
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // }
 
   getMovies(token) {
     axios
@@ -77,28 +63,24 @@ class MainView extends React.Component {
     this.getMovies(authData.token);
   }
 
-
   render() {
     const { movies, user } = this.state;
 
-
-    if (!user)
-      return (
-        <Row>
-          <Col>
-            <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
-          </Col>
-        </Row>
-      );
-    if (movies.length === 0) return <div className="main-view" />;
-
     return (
       <Router>
+        <NavbarView user={user} />
         <Row className="main-view justify-content-md-center">
           <Route
             exact
             path="/"
             render={() => {
+              if (!user)
+                return (
+                  <Col>
+                    <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
+                  </Col>
+                );
+              if (movies.length === 0) return <div className="main-view" />;
               return movies.map((m) => (
                 <Col md={3} key={m._id}>
                   <MovieCard movie={m} />
@@ -107,8 +89,27 @@ class MainView extends React.Component {
             }}
           />
           <Route
+            path="/register"
+            render={() => {
+              if (user) return <Redirect to="/" />;
+              return (
+                <Col>
+                  <RegistrationView />
+                </Col>
+              );
+            }}
+          />
+
+          <Route
             path="/movies/:movieId"
-            render={({ match }) => {
+            render={({ match, history }) => {
+              if (!user)
+                return (
+                  <Col>
+                    <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
+                  </Col>
+                );
+              if (movies.length === 0) return <div className="main-view"></div>;
               return (
                 <Col md={8}>
                   <MovieView
@@ -121,7 +122,13 @@ class MainView extends React.Component {
           />
           <Route
             path="/directors/:name"
-            render={({ match }) => {
+            render={({ match, history }) => {
+              if (!user)
+                return (
+                  <Col>
+                    <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
+                  </Col>
+                );
               if (movies.length === 0) return <div className="main-view" />;
               return (
                 <Col md={8}>
@@ -139,7 +146,13 @@ class MainView extends React.Component {
 
           <Route
             path="/genres/:name"
-            render={({ match }) => {
+            render={({ match, history }) => {
+              if (!user)
+                return (
+                  <Col>
+                    <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
+                  </Col>
+                );
               if (movies.length === 0) return <div className="main-view" />;
               return (
                 <Col md={8}>
@@ -148,6 +161,47 @@ class MainView extends React.Component {
                       movies.find((m) => m.Genre.Name === match.params.name)
                         .Genre
                     }
+                    onBackClick={() => history.goBack()}
+                  />
+                </Col>
+              );
+            }}
+          />
+          <Route
+            path="/register"
+            render={() => {
+              if (user) return <Redirect to="/" />;
+              return (
+                <Col lg={8} md={8}>
+                  <RegistrationView />
+                </Col>
+              );
+            }}
+          />
+          <Route
+            path={`/users/${user}`}
+            render={({ match, history }) => {
+              if (!user) return <Redirect to="/" />;
+              return (
+                <Col>
+                  <ProfileView
+                    movies={movies}
+                    user={user}
+                    onBackClick={() => history.goBack()}
+                  />
+                </Col>
+              );
+            }}
+          />
+          <Route
+            path={`/user-update/${user}`}
+            render={({ match, history }) => {
+              if (!user) return <Redirect to="/" />;
+              return (
+                <Col>
+                  <UserUpdate
+                    movies={movies}
+                    user={user}
                     onBackClick={() => history.goBack()}
                   />
                 </Col>
