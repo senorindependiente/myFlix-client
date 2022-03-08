@@ -40166,7 +40166,7 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","./login-view.scss":"lS4BK","@parcel/transformer-js/src/esmodule-helpers.js":"817f3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"40h0D","axios":"iYoWk","react-bootstrap":"h2YVd"}],"lS4BK":[function() {},{}],"jyMAr":[function() {},{}],"6EiBJ":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","./login-view.scss":"lS4BK","@parcel/transformer-js/src/esmodule-helpers.js":"817f3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"40h0D","react-bootstrap":"h2YVd","axios":"iYoWk"}],"lS4BK":[function() {},{}],"jyMAr":[function() {},{}],"6EiBJ":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$4249 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -40661,7 +40661,7 @@ $RefreshReg$(_c, "NavbarView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"817f3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"40h0D","./navbar-view.scss":"eDP1C"}],"eDP1C":[function() {},{}],"2E7Aw":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","./navbar-view.scss":"eDP1C","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"817f3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"40h0D"}],"eDP1C":[function() {},{}],"2E7Aw":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$58c6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -41032,6 +41032,6 @@ exports.default = ProfileView;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"6TuXu","axios":"iYoWk","prop-types":"1tgq3","react-bootstrap":"h2YVd","../movie-card/movie-card":"6EiBJ","./profile-view.scss":"gb0ga","react-bootstrap/Modal":"kvv9u","@parcel/transformer-js/src/esmodule-helpers.js":"817f3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"40h0D","react/jsx-runtime":"8xIwr"}],"gb0ga":[function() {},{}],"jUTZ8":[function() {},{}]},["lhfnz","8EMuS","dLPEP"], "dLPEP", "parcelRequireaec4")
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","prop-types":"1tgq3","react-bootstrap":"h2YVd","../movie-card/movie-card":"6EiBJ","./profile-view.scss":"gb0ga","react-bootstrap/Modal":"kvv9u","@parcel/transformer-js/src/esmodule-helpers.js":"817f3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"40h0D"}],"gb0ga":[function() {},{}],"jUTZ8":[function() {},{}]},["lhfnz","8EMuS","dLPEP"], "dLPEP", "parcelRequireaec4")
 
 //# sourceMappingURL=index.fcff31a1.js.map
