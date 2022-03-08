@@ -1,10 +1,9 @@
 import React from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
-import { Button, Card, Col, Form, Row, Container } from "react-bootstrap";
-import { MovieCard } from "../movie-card/movie-card";
+import { Card, Col, Form, Row } from "react-bootstrap";
 import "./profile-view.scss";
-import Modal from "react-bootstrap/Modal";
+
 
 class ProfileView extends React.Component {
   constructor() {
