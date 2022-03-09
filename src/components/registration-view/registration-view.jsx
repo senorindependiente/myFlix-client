@@ -17,53 +17,52 @@ function RegistrationView(props) {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [birthday, setBirthday] = useState("");
+  const [ usernameErr, setUsernameErr ] = useState("");
+  const [ passwordErr, setPasswordErr ] = useState("");
+  const [ emailErr, setEmailErr ] = useState("");
+  const [ birthdayErr, setBirthdayErr ] = useState("");
 
-  const [values, setValues] = useState({
-    usernameErr: "",
-    passwordErr: "",
-    emailErr: "",
-  });
+  // const [values, setValues] = useState({
+  //   usernameErr: "",
+  //   passwordErr: "",
+  //   emailErr: "",
+  // });
 
   //validate user inputs
   const validate = () => {
     let isReq = true;
-    if (!username) {
-      setValues({ ...values, usernameErr: "Username Required" });
-      isReq = false;
-    } else if (username.length < 5) {
-      setValues({
-        ...values,
-        usernameErr: "Username must be at least 5 characters long",
-      });
+    if(!username){
+     setUsernameErr("Username Required");
+     isReq = false;
+    }else if(username.length < 6){
+     setUsernameErr('Username must be 6 characters long');
+     isReq = false;
+    }
+    if(!password){
+     setPasswordErr("Password Required");
+     isReq = false;
+    }else if(password.length < 8){
+     setPasswordErr('Password must be 8 characters long');
+     isReq = false;
+    }
+    if(!email){
+      setEmailErr("Please user valid email")
+    } else if(email.indexOf('@') === -1){
+      setEmailErr("Please user valid email")
       isReq = false;
     }
-
-    if (!password) {
-      setValues({ ...values, passwordErr: "Password Required" });
-      isReq = false;
-    } else if (password.length < 5) {
-      setValues({
-        ...values,
-        passwordErr: "Password must be at least 5 characters long",
-      });
+    if(!birthday){
+      setBirthdayErr("Please enter birthday")
       isReq = false;
     }
-
-    if (!email) {
-      setValues({ ...values, emailErr: "Email Required" });
-      isReq = false;
-    } else if (email.indexOf("@") === -1) {
-      setValues({ ...values, emailErr: "Email invalid" });
-      isReq = false;
-    }
-
     return isReq;
-  };
+}
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const isReq = validate();
     if (isReq) {
+      console.log(username, password);
       axios
         .post("https://movieapiapp.herokuapp.com/users", {
           Username: username,
@@ -78,10 +77,10 @@ function RegistrationView(props) {
           //the second argument "/_self " is necessary so that the page will open in the current tap
           window.open("/", "_self");
         })
-        .catch((response) => {
-          console.error(response);
+        .catch((e) => {
           alert("unable to register");
         });
+        props.onLoggedIn(username);
     }
   };
 
@@ -102,7 +101,7 @@ function RegistrationView(props) {
                     required
                     placeholder="Enter a username"
                   />
-                  {values.usernameErr && <p>{values.usernameErr}</p>}
+                  {usernameErr && <p>{usernameErr}</p>}
                 </Form.Group>
                 <Form.Group>
                   <Form.Label className="form-label">Password: </Form.Label>
@@ -114,7 +113,7 @@ function RegistrationView(props) {
                     minLength={5}
                     placeholder="Your password must be 5 or more characters"
                   />
-                  {values.passwordErr && <p>{values.passwordErr}</p>}
+                  {passwordErr && <p>{passwordErr}</p>}
                 </Form.Group>
                 <Form.Group className="form-group">
                   <Form.Label className="form-label">Email:</Form.Label>
@@ -125,7 +124,7 @@ function RegistrationView(props) {
                     required
                     placeholder="Enter your Email"
                   />
-                  {values.emailErr && <p>{values.emailErr}</p>}
+                  {emailErr && <p>{emailErr}</p>}
                 </Form.Group>
 
                 <Form.Group>
@@ -138,7 +137,7 @@ function RegistrationView(props) {
                   />
 
                   <Form.Group>
-                    <button type="submit" className="button">
+                    <button type="submit" className="button" onClick={handleSubmit}>
                       Submit
                     </button>
                   </Form.Group>
@@ -152,8 +151,8 @@ function RegistrationView(props) {
   );
 }
 
-RegistrationView.propTypes = {
-  onRegistration: PropTypes.func.isRequired,
-};
+// RegistrationView.propTypes = {
+  
+// };
 
 export default RegistrationView;

@@ -1,9 +1,9 @@
 import React from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
+import { Link } from 'react-router-dom';
 import { Card, Col, Form, Row } from "react-bootstrap";
 import "./profile-view.scss";
-
 
 class ProfileView extends React.Component {
   constructor() {
@@ -13,7 +13,8 @@ class ProfileView extends React.Component {
       Username: null,
       Password: null,
       Email: null,
-     
+      FavoriteMovies: [],
+      Birthday: null,
     };
   }
 
@@ -55,34 +56,69 @@ class ProfileView extends React.Component {
       });
   }
 
-  updateUser = (event, token) => {
+  updateUser = (event) => {
     event.preventDefault();
     const Username = localStorage.getItem("user");
+    const token = localStorage.getItem("token");
 
-    axios.put(`https://movieapiapp.herokuapp.com/users/${Username}`, {
-      headers: { Authorization: `Bearer ${token}` },
-    }),
-      {
-        Username: this.state.Username,
-        Password: this.state.Password,
-        Email: this.state.Email,
-        Birthday: this.state.Birthday,
-      }
-
-        .then((response) => {
-          //Assign the result to the state
-          this.setState({
-            user: response.data,
-          });
-        })
-        .catch(function (error) {
-          console.log(error);
+    axios
+      .put(
+        `https://movieapiapp.herokuapp.com/users/${Username}`,
+        {
+          Username: this.state.Username,
+          Password: this.state.Password,
+          Email: this.state.Email,
+          Birthday: this.state.Birthday,
+        },
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
+      .then((response) => {
+        this.setState({
+          Username: response.data.Username,
+          Password: response.data.Password,
+          Email: response.data.Email,
+          Birthday: response.data.Birthday,
         });
+
+        localStorage.setItem("user", this.state.Username);
+        alert("Profile updated");
+        window.open("/profile", "_self");
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
-  deleteUser(token) {
-    const Username = localStorage.getItem("user");
+// Delete a movie from FavoriteMovies list
+removeFavorite = (e, movie) => {
+  e.preventDefault();
+  const Username = localStorage.getItem('user');
+  const token = localStorage.getItem('token');
 
+  axios
+      .delete(
+          `https://movieapiapp.herokuapp.com/users/${Username}/movies/${movie._id}`,
+          {
+              headers: { Authorization: `Bearer ${token}` },
+          }
+      )
+      .then((response) => {
+          console.log(response);
+          alert("Movie removed");
+          this.componentDidMount();
+      })
+      .catch(function (error) {
+          console.log(error);
+      });
+};
+
+
+
+  deleteUser() {
+    const Username = localStorage.getItem("user");
+    const token = localStorage.getItem("token");
     axios
       .delete(`https://movieapiapp.herokuapp.com/users/${Username}`, {
         headers: { Authorization: `Bearer ${token}` },
@@ -124,17 +160,18 @@ class ProfileView extends React.Component {
   }
 
   render() {
-    const { Username, Email, Birthday } = this.state;
+    const { movies } = this.props;
+        const { FavoriteMovies, Username, Email, Birthday } = this.state;
 
     if (!Username) {
       return null;
     }
 
     return (
-        <div>
+      <div>
         <Row>
           <Col>
-            <Card >
+            <Card>
               <Card.Body>
                 <Card.Title>Profile</Card.Title>
                 <Form
@@ -166,7 +203,7 @@ class ProfileView extends React.Component {
                       type="password"
                       name="Password"
                       placeholder="New Password"
-                      value={""}
+                      value={"Password"}
                       onChange={(event) => this.setPassword(event.target.value)}
                       required
                     />
@@ -179,7 +216,7 @@ class ProfileView extends React.Component {
                       name="Email"
                       placeholder="Enter Email"
                       value={Email}
-                      onChange={(e) => this.setEmail(e.target.value)}
+                      onChange={(event) => this.setEmail(event.target.value)}
                       required
                     />
                   </Form.Group>
@@ -187,18 +224,13 @@ class ProfileView extends React.Component {
                   <Form.Group>
                     <Form.Label>Birthday</Form.Label>
                     <Form.Control
-                      type="date"
                       name="Birthday"
                       value={Birthday}
-                      onChange={(e) => this.setBirthday(e.target.value)}
+                      onChange={(event) => this.setBirthday(event.target.value)}
                     />
                   </Form.Group>
                   <div>
-                    <button
-                      className="button2"
-                      type="submit"
-                      onClick={this.editUser}
-                    >
+                    <button className="button2" onClick={this.updateUser}>
                       Update User
                     </button>
                     <button
@@ -213,7 +245,45 @@ class ProfileView extends React.Component {
             </Card>
           </Col>
         </Row>
-
+        <Row style={{ marginTop: "20px" }}>
+                    <Col>
+                        <h4>{Username} Favorite Movies</h4>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <Card.Body>
+                            {FavoriteMovies.length === 0 && (
+                                <div className="text-center">No Favorite Movies</div>
+                            )}
+                            <Row className="favorite-container">
+                                {FavoriteMovies.length > 0 &&
+                                    movies.map((movie) => {
+                                        if (
+                                            movie._id ===
+                                            FavoriteMovies.find((fav) => fav === movie._id)
+                                        ) {
+                                            return (
+                                                <Card className="favorite-movie card-content" key={movie._id} >
+                                                    <Card.Img
+                                                        className="fav-poster"
+                                                        variant="top"
+                                                        src={movie.ImagePath}
+                                                    />
+                                                    <Card.Body>
+                                                        <Card.Title className="movie_title">
+                                                            {movie.Title}
+                                                        </Card.Title>
+                                                        <button  value={movie._id} onClick={(e) => this.removeFavorite(e, movie)}>Remove</button>
+                                                    </Card.Body>
+                                                </Card>
+                                            );
+                                        }
+                                    })}
+                            </Row>
+                        </Card.Body>
+                    </Col>
+                </Row>
         <div>
           <button
             className="button"
@@ -224,7 +294,6 @@ class ProfileView extends React.Component {
             <a href="/">Back</a>
           </button>
         </div>
-        
       </div>
     );
   }
