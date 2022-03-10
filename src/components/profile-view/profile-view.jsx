@@ -161,7 +161,7 @@ removeFavorite = (e, movie) => {
 
   render() {
     const { movies } = this.props;
-        const { FavoriteMovies, Username, Email, Birthday } = this.state;
+        const { FavoriteMovies, Username, Email, Birthday, Password } = this.state;
 
     if (!Username) {
       return null;
@@ -203,7 +203,7 @@ removeFavorite = (e, movie) => {
                       type="password"
                       name="Password"
                       placeholder="New Password"
-                      value={"Password"}
+                      value={Password}
                       onChange={(event) => this.setPassword(event.target.value)}
                       required
                     />
