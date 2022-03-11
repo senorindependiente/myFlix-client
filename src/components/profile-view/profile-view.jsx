@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { Card, Col, Form, Row } from "react-bootstrap";
 import "./profile-view.scss";
 
@@ -13,7 +13,7 @@ class ProfileView extends React.Component {
       Username: null,
       Password: null,
       Email: null,
-      FavoriteMovies: [],
+      FavoriteMovie: [],
       Birthday: null,
     };
   }
@@ -84,37 +84,35 @@ class ProfileView extends React.Component {
 
         localStorage.setItem("user", this.state.Username);
         alert("Profile updated");
-        window.open("/profile", "_self");
+        window.open(`/users/${Username}`, "_self");
       })
       .catch(function (error) {
         console.log(error);
       });
   };
 
-// Delete a movie from FavoriteMovies list
-removeFavorite = (e, movie) => {
-  e.preventDefault();
-  const Username = localStorage.getItem('user');
-  const token = localStorage.getItem('token');
+  // Delete a movie from FavoriteMovies list
+  removeFavorite = (e, movie) => {
+    e.preventDefault();
+    const Username = localStorage.getItem("user");
+    const token = localStorage.getItem("token");
 
-  axios
+    axios
       .delete(
-          `https://movieapiapp.herokuapp.com/users/${Username}/movies/${movie._id}`,
-          {
-              headers: { Authorization: `Bearer ${token}` },
-          }
+        `https://movieapiapp.herokuapp.com/users/${Username}/movies/${movie._id}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
       )
       .then((response) => {
-          console.log(response);
-          alert("Movie removed");
-          this.componentDidMount();
+        console.log(response);
+        alert("Movie removed");
+        this.componentDidMount();
       })
       .catch(function (error) {
-          console.log(error);
+        console.log(error);
       });
-};
-
-
+  };
 
   deleteUser() {
     const Username = localStorage.getItem("user");
@@ -161,7 +159,7 @@ removeFavorite = (e, movie) => {
 
   render() {
     const { movies } = this.props;
-        const { FavoriteMovies, Username, Email, Birthday, Password } = this.state;
+    const { FavoriteMovie, Username, Email, Birthday, Password } = this.state;
 
     if (!Username) {
       return null;
@@ -246,44 +244,52 @@ removeFavorite = (e, movie) => {
           </Col>
         </Row>
         <Row style={{ marginTop: "20px" }}>
-                    <Col>
-                        <h4>{Username} Favorite Movies</h4>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <Card.Body>
-                            {FavoriteMovies.length === 0 && (
-                                <div className="text-center">No Favorite Movies</div>
-                            )}
-                            <Row className="favorite-container">
-                                {FavoriteMovies.length > 0 &&
-                                    movies.map((movie) => {
-                                        if (
-                                            movie._id ===
-                                            FavoriteMovies.find((fav) => fav === movie._id)
-                                        ) {
-                                            return (
-                                                <Card className="favorite-movie card-content" key={movie._id} >
-                                                    <Card.Img
-                                                        className="fav-poster"
-                                                        variant="top"
-                                                        src={movie.ImagePath}
-                                                    />
-                                                    <Card.Body>
-                                                        <Card.Title className="movie_title">
-                                                            {movie.Title}
-                                                        </Card.Title>
-                                                        <button  value={movie._id} onClick={(e) => this.removeFavorite(e, movie)}>Remove</button>
-                                                    </Card.Body>
-                                                </Card>
-                                            );
-                                        }
-                                    })}
-                            </Row>
-                        </Card.Body>
-                    </Col>
-                </Row>
+          <Col>
+            <h4>{Username} Favorite Movies</h4>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Card.Body>
+              {FavoriteMovie.length === 0 && (
+                <div className="text-center">No Favorite Movies</div>
+              )}
+              
+              <Row className="favorite-container">
+                {FavoriteMovie.length > 0 &&
+                  movies.map((movie) => {
+                    if (
+                      movie._id ===
+                      FavoriteMovie.find((fav) => fav === movie._id)
+                    ) {
+                      return (
+                        <Card
+                          key={movie._id}
+                        >
+                          <Card.Img
+                    
+                            variant="top"
+                            src={movie.ImagePath}
+                          />
+                          <Card.Body>
+                            <Card.Title className="movie_title">
+                              {movie.Title}
+                            </Card.Title>
+                            <button className="button2"
+                              value={movie._id}
+                              onClick={(e) => this.removeFavorite(e, movie)}
+                            >
+                              Remove
+                            </button>
+                          </Card.Body>
+                        </Card>
+                      );
+                    }
+                  })}
+              </Row>
+            </Card.Body>
+          </Col>
+        </Row>
         <div>
           <button
             className="button"
