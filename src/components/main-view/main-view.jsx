@@ -101,7 +101,7 @@ class MainView extends React.Component {
                 );
               if (movies.length === 0) return <div className="main-view"></div>;
               return (
-                <Col md={6}>
+                <Col md={6} className="mx-auto my-auto" >
                   <MovieView
                     movie={movies.find((m) => m._id === match.params.movieId)}
                     onBackClick={() => history.goBack()}

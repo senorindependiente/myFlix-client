@@ -23,6 +23,10 @@ $third-color: #e2b659;
   @include darktheme();
 }
 
+.container{
+  
+}
+
 .movie-view {
   margin: 1rem;
   font-family: $primary-font;
@@ -42,13 +46,19 @@ $third-color: #e2b659;
 }
 
 .cardgroup button {
-  margin-left: -1rem;
-//   font-size: 1.1rem;
-//   background: linear-gradient(to right, #a2f71b, #8b8df3);
-//   -webkit-background-clip: text;
-//   -webkit-text-fill-color: transparent;
+ margin:2rem 0rem;
+  text-decoration: none !important;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px -1px rgb(0 0 0 / 16%), 0 4px 5px 0 rgb(0 0 0 / 11%), 0 1px 10px 0 rgb(0 0 0 / 10%);  //   background: linear-gradient(to right, #a2f71b, #8b8df3);
+  //   -webkit-background-clip: text;
+  //   -webkit-text-fill-color: transparent;
 }
 
 // .cardgroup button:hover{
 //   opacity: 0.8;
 // }
+
+.genre{
+  padding-left:5rem;
+}
