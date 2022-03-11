@@ -17,10 +17,10 @@ function RegistrationView(props) {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [birthday, setBirthday] = useState("");
-  const [ usernameErr, setUsernameErr ] = useState("");
-  const [ passwordErr, setPasswordErr ] = useState("");
-  const [ emailErr, setEmailErr ] = useState("");
-  const [ birthdayErr, setBirthdayErr ] = useState("");
+  const [usernameErr, setUsernameErr] = useState("");
+  const [passwordErr, setPasswordErr] = useState("");
+  const [emailErr, setEmailErr] = useState("");
+  const [birthdayErr, setBirthdayErr] = useState("");
 
   // const [values, setValues] = useState({
   //   usernameErr: "",
@@ -31,32 +31,32 @@ function RegistrationView(props) {
   //validate user inputs
   const validate = () => {
     let isReq = true;
-    if(!username){
-     setUsernameErr("Username Required");
-     isReq = false;
-    }else if(username.length < 6){
-     setUsernameErr('Username must be 6 characters long');
-     isReq = false;
-    }
-    if(!password){
-     setPasswordErr("Password Required");
-     isReq = false;
-    }else if(password.length < 8){
-     setPasswordErr('Password must be 8 characters long');
-     isReq = false;
-    }
-    if(!email){
-      setEmailErr("Please user valid email")
-    } else if(email.indexOf('@') === -1){
-      setEmailErr("Please user valid email")
+    if (!username) {
+      setUsernameErr("Username Required");
+      isReq = false;
+    } else if (username.length < 6) {
+      setUsernameErr("Username must be 6 characters long");
       isReq = false;
     }
-    if(!birthday){
-      setBirthdayErr("Please enter birthday")
+    if (!password) {
+      setPasswordErr("Password Required");
+      isReq = false;
+    } else if (password.length < 8) {
+      setPasswordErr("Password must be 8 characters long");
+      isReq = false;
+    }
+    if (!email) {
+      setEmailErr("Please user valid email");
+    } else if (email.indexOf("@") === -1) {
+      setEmailErr("Please user valid email");
+      isReq = false;
+    }
+    if (!birthday) {
+      setBirthdayErr("Please enter birthday");
       isReq = false;
     }
     return isReq;
-}
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -80,7 +80,7 @@ function RegistrationView(props) {
         .catch((e) => {
           alert("unable to register");
         });
-        props.onLoggedIn(username);
+      props.onLoggedIn(username);
     }
   };
 
@@ -88,8 +88,8 @@ function RegistrationView(props) {
     <Container className="container">
       <Row>
         <Col>
-          <CardGroup className="card-group">
-            <Card className="card">
+          <Card className="card">
+            <Card.Body>
               <Card.Header className="card-header">Please Register</Card.Header>
               <Form>
                 <Form.Group>
@@ -137,22 +137,31 @@ function RegistrationView(props) {
                   />
 
                   <Form.Group>
-                    <button type="submit" className="button" onClick={handleSubmit}>
+                    <button
+                      type="submit"
+                      className="button"
+                      onClick={handleSubmit}
+                    >
                       Submit
                     </button>
                   </Form.Group>
                 </Form.Group>
               </Form>
-            </Card>
-          </CardGroup>
+            </Card.Body>
+          </Card>
         </Col>
       </Row>
     </Container>
   );
 }
 
-// RegistrationView.propTypes = {
-  
-// };
+RegistrationView.propTypes = {
+  register: PropTypes.shape({
+    Username: PropTypes.string.isRequired,
+    Password: PropTypes.string.isRequired,
+    Email: PropTypes.string.isRequired,
+  }),
+  onRegistration: PropTypes.func,
+};
 
 export default RegistrationView;

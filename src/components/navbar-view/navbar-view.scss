@@ -4,9 +4,34 @@ $primary-color: #565656;
 $secondary-color: #fff;
 $third-color: #e2b659;
 
-
 .navbar {
   margin-bottom: 5rem;
-  border-bottom: white 1px solid;
 }
 
+.nav-link {
+  margin-right: 2rem;
+}
+
+.text-gradient {
+  font-size: 3rem;
+  font-weight: 600;
+  background: linear-gradient(to right, #30cfd0, #c43ad6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.signup button {
+  background-color: $secondary-color;
+  color: $primary-color;
+  border: none;
+  border-radius: 5px;
+  padding: 0.4rem 1rem;
+}
+
+.signout {
+  background-color: $primary-color;
+  color: #e2b659;
+  border: none;
+  border-radius: 5px;
+  padding: 0.4rem 1rem;
+}

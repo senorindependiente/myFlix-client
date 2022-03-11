@@ -21,27 +21,29 @@ function NavbarView({ user }) {
   };
 
   return (
-    <Navbar className="navbar" variant="dark" expand="md">
-      <Navbar.Brand className="brand" href="/">myFlix Movie Database</Navbar.Brand>
+    <Navbar className="navbar text-white" expand="md" sticky="top">
+      <Navbar.Brand className="brand" href="/"> < span className="text-gradient">
+       myFlix </span></Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="me-auto">
-          <Nav.Link className="nav-link"href="/">Movies</Nav.Link>
+        <Nav className="ms-auto">
+          <Nav.Link className="nav-link movies" href="/">Movies</Nav.Link>
 
-          {isAuth() && <Nav.Link href={`/users/${user}`}>User</Nav.Link>}
+          {isAuth() && <Nav.Link className="nav-link users" href={`/users/${user}`}>User</Nav.Link>}
           {isAuth() && (
-            <Button
+            <button 
+            className="nav-link signout"
               variant="link"
               onClick={() => {
                 onLoggedOut();
               }}
             >
               Sign-out
-            </Button>
+            </button>
           )}
 
-          {!isAuth() && <Nav.Link href="/">Sign-in</Nav.Link>}
-          {!isAuth() && <Nav.Link href="/register">Sign-up</Nav.Link>}
+          {!isAuth() && <Nav.Link className="nav-link" href="/">  Sign-in</Nav.Link>}
+          {!isAuth() && <Nav.Link  className="nav-link signup" href="/register"> <button>Register</button> </Nav.Link>}
         </Nav >
       </Navbar.Collapse>
     </Navbar>

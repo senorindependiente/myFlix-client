@@ -63,8 +63,9 @@ Form {
   text-decoration: none;
   color:#e2b659;
 }
-.button2:hover {
+.button2 a:hover {
   opacity: 0.8;
+  color:#e2b659;
 }
 
 input[type="text"] {

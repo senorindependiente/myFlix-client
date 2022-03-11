@@ -162,7 +162,7 @@ class MainView extends React.Component {
             render={() => {
               if (user) return <Redirect to="/" />;
               return (
-                <Col lg={8} md={8}>
+                <Col>
                   <RegistrationView />
                 </Col>
               );

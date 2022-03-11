@@ -41,7 +41,7 @@ Form {
 }
 
 .card-header {
-  color: #565656;
+  color: #fff;
   font-size: 1.4rem;
   font-family: "Alfa Slab One", cursive;
 }
@@ -111,8 +111,9 @@ Form {
   color: #e2b659;
 }
 
-.button2:hover {
+.button2 a:hover {
   opacity: 0.8;
+  color: #e2b659;
 }
 
 input[type=text] {
@@ -141,7 +142,7 @@ input[type=password] {
 }
 
 .card {
-  min-height: 80%;
+  min-height: 90%;
 }
 
 .card {
@@ -170,7 +171,34 @@ input[type=password] {
 
 .navbar {
   margin-bottom: 5rem;
-  border-bottom: white 1px solid;
+}
+
+.nav-link {
+  margin-right: 2rem;
+}
+
+.text-gradient {
+  font-size: 3rem;
+  font-weight: 600;
+  background: linear-gradient(to right, #30cfd0, #c43ad6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.signup button {
+  background-color: #fff;
+  color: #565656;
+  border: none;
+  border-radius: 5px;
+  padding: 0.4rem 1rem;
+}
+
+.signout {
+  background-color: #565656;
+  color: #e2b659;
+  border: none;
+  border-radius: 5px;
+  padding: 0.4rem 1rem;
 }
 * {
   background: #565656;

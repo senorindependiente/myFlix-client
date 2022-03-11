@@ -193,6 +193,7 @@ class ProfileView extends React.Component {
                       value={Username}
                       onChange={(event) => this.setUsername(event.target.value)}
                       required
+                      minLength={5}
                     />
                   </Form.Group>
 
@@ -205,6 +206,7 @@ class ProfileView extends React.Component {
                       value={Password}
                       onChange={(event) => this.setPassword(event.target.value)}
                       required
+                      minLength={5}
                     />
                   </Form.Group>
 
@@ -306,3 +308,23 @@ class ProfileView extends React.Component {
   }
 }
 export default ProfileView;
+
+
+ProfileView.propTypes = {
+  movies: PropTypes.arrayOf(PropTypes.shape({
+      Title: PropTypes.string.isRequired,
+      Description: PropTypes.string.isRequired,
+      ImagePath: PropTypes.string.isRequired,
+      Genre: PropTypes.shape({
+          Name: PropTypes.string.isRequired,
+          Description: PropTypes.string.isRequired,
+      }).isRequired,
+      Director: PropTypes.shape({
+          Bio: PropTypes.string.isRequired,
+          Birth: PropTypes.string.isRequired,
+          Death: PropTypes.string,
+          Name: PropTypes.string.isRequired,
+      }).isRequired,
+  })).isRequired,
+  onBackClick: PropTypes.func.isRequired
+};
