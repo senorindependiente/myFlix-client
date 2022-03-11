@@ -175,6 +175,13 @@ input[type=password] {
 
 .nav-link {
   margin-right: 2rem;
+  color: #fff !important;
+  transition: 0.5s;
+  letter-spacing: 0.2rem;
+}
+
+.nav-link:hover {
+  opacity: 0.8;
 }
 
 .text-gradient {
@@ -191,6 +198,11 @@ input[type=password] {
   border: none;
   border-radius: 5px;
   padding: 0.4rem 1rem;
+  transition: 0.5s;
+}
+
+.signup button:hover {
+  opacity: 0.8;
 }
 
 .signout {

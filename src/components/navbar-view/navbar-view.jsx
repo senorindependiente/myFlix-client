@@ -21,7 +21,7 @@ function NavbarView({ user }) {
   };
 
   return (
-    <Navbar className="navbar text-white" expand="md" sticky="top">
+    <Navbar className="navbar" expand="md" sticky="top">
       <Navbar.Brand className="brand" href="/"> < span className="text-gradient">
        myFlix </span></Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -42,8 +42,8 @@ function NavbarView({ user }) {
             </button>
           )}
 
-          {!isAuth() && <Nav.Link className="nav-link" href="/">  Sign-in</Nav.Link>}
-          {!isAuth() && <Nav.Link  className="nav-link signup" href="/register"> <button>Register</button> </Nav.Link>}
+          {!isAuth() && <Nav.Link className="nav-link" href="/">  Sign-In</Nav.Link>}
+          {!isAuth() && <Nav.Link  className="signup" href="/register"> <button>Register</button> </Nav.Link>}
         </Nav >
       </Navbar.Collapse>
     </Navbar>

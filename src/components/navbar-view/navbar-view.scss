@@ -6,10 +6,18 @@ $third-color: #e2b659;
 
 .navbar {
   margin-bottom: 5rem;
+
 }
 
 .nav-link {
   margin-right: 2rem;
+  color: $secondary-color !important;
+transition: 0.5s;
+letter-spacing: 0.2rem;
+}
+
+.nav-link:hover{
+  opacity: 0.8;
 }
 
 .text-gradient {
@@ -26,6 +34,12 @@ $third-color: #e2b659;
   border: none;
   border-radius: 5px;
   padding: 0.4rem 1rem;
+  transition: 0.5s;
+}
+
+.signup button:hover {
+  opacity: 0.8;
+ 
 }
 
 .signout {

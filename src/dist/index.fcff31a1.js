@@ -40600,7 +40600,7 @@ function NavbarView({ user  }) {
         else return false;
     };
     return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Navbar, {
-        className: "navbar text-white",
+        className: "navbar",
         expand: "md",
         sticky: "top",
         __source: {
@@ -40694,10 +40694,10 @@ function NavbarView({ user  }) {
                                 lineNumber: 45
                             },
                             __self: this,
-                            children: " Sign-in"
+                            children: " Sign-In"
                         }),
                         !isAuth() && /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Nav.Link, {
-                            className: "nav-link signup",
+                            className: "signup",
                             href: "/register",
                             __source: {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
