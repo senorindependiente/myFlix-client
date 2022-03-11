@@ -66,10 +66,6 @@ function LoginView(props) {
                   Submit
                 </button>
 
-                <button href="/register" className="button2">
-                 
-                  <a href="/register">Register</a>
-                </button>
               </Form>
             </Card.Body>
           </Card>

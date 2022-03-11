@@ -40154,24 +40154,6 @@ function LoginView(props) {
                                         },
                                         __self: this,
                                         children: "Submit"
-                                    }),
-                                    /*#__PURE__*/ _jsxRuntime.jsx("button", {
-                                        href: "/register",
-                                        className: "button2",
-                                        __source: {
-                                            fileName: "src/components/login-view/login-view.jsx",
-                                            lineNumber: 69
-                                        },
-                                        __self: this,
-                                        children: /*#__PURE__*/ _jsxRuntime.jsx("a", {
-                                            href: "/register",
-                                            __source: {
-                                                fileName: "src/components/login-view/login-view.jsx",
-                                                lineNumber: 71
-                                            },
-                                            __self: this,
-                                            children: "Register"
-                                        })
                                     })
                                 ]
                             })
@@ -40687,7 +40669,7 @@ function NavbarView({ user  }) {
                             children: "Sign-out"
                         }),
                         !isAuth() && /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
-                            className: "nav-link",
+                            className: "nav-link signin",
                             href: "/",
                             __source: {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",

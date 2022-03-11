@@ -171,13 +171,15 @@ input[type=password] {
 
 .navbar {
   margin-bottom: 5rem;
+  font-family: "Cuprum", sans-serif;
 }
 
 .nav-link {
   margin-right: 2rem;
   color: #fff !important;
   transition: 0.5s;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.1rem;
+  font-size: 1.1rem;
 }
 
 .nav-link:hover {
@@ -185,19 +187,19 @@ input[type=password] {
 }
 
 .text-gradient {
+  font-family: "Alfa Slab One", cursive;
   font-size: 3rem;
-  font-weight: 600;
+  font-weight: 400;
   background: linear-gradient(to right, #30cfd0, #c43ad6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .signup button {
-  background-color: #fff;
-  color: #565656;
-  border: none;
+  background: #565656;
   border-radius: 5px;
   padding: 0.4rem 1rem;
+  border: #e2b659 1px solid;
   transition: 0.5s;
 }
 
@@ -211,6 +213,13 @@ input[type=password] {
   border: none;
   border-radius: 5px;
   padding: 0.4rem 1rem;
+}
+
+.users,
+.signin,
+.movies {
+  margin-top: 0.5rem;
+  font-weight: 100;
 }
 * {
   background: #565656;

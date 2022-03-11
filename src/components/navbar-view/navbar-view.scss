@@ -4,42 +4,48 @@ $primary-color: #565656;
 $secondary-color: #fff;
 $third-color: #e2b659;
 
+@mixin buttonstyle2 {
+  background: $primary-color;
+  border-radius: 5px;
+  padding: 0.4rem 1rem;
+  border: $third-color 1px solid;
+  transition: 0.5s;
+}
+
 .navbar {
   margin-bottom: 5rem;
+  font-family: $primary-font;
+  
 
 }
 
 .nav-link {
   margin-right: 2rem;
   color: $secondary-color !important;
-transition: 0.5s;
-letter-spacing: 0.2rem;
+  transition: 0.5s;
+  letter-spacing: 0.1rem;
+  font-size: 1.1rem;
 }
 
-.nav-link:hover{
+.nav-link:hover {
   opacity: 0.8;
 }
 
 .text-gradient {
+  font-family: $secondary-font;
   font-size: 3rem;
-  font-weight: 600;
+  font-weight: 400;
   background: linear-gradient(to right, #30cfd0, #c43ad6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .signup button {
-  background-color: $secondary-color;
-  color: $primary-color;
-  border: none;
-  border-radius: 5px;
-  padding: 0.4rem 1rem;
-  transition: 0.5s;
+  @include buttonstyle2();
 }
 
 .signup button:hover {
   opacity: 0.8;
- 
 }
 
 .signout {
@@ -48,4 +54,11 @@ letter-spacing: 0.2rem;
   border: none;
   border-radius: 5px;
   padding: 0.4rem 1rem;
+}
+
+.users,
+.signin,
+.movies {
+  margin-top: 0.5rem;
+  font-weight: 100;
 }

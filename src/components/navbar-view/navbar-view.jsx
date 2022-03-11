@@ -42,7 +42,7 @@ function NavbarView({ user }) {
             </button>
           )}
 
-          {!isAuth() && <Nav.Link className="nav-link" href="/">  Sign-In</Nav.Link>}
+          {!isAuth() && <Nav.Link className="nav-link signin" href="/">  Sign-In</Nav.Link>}
           {!isAuth() && <Nav.Link  className="signup" href="/register"> <button>Register</button> </Nav.Link>}
         </Nav >
       </Navbar.Collapse>
