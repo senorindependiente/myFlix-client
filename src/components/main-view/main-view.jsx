@@ -77,7 +77,7 @@ class MainView extends React.Component {
             render={() => {
               if (!user)
                 return (
-                  <Col>
+                  <Col md={6} className="mx-auto">
                     <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
                   </Col>
                 );
@@ -95,7 +95,7 @@ class MainView extends React.Component {
             render={({ match, history }) => {
               if (!user)
                 return (
-                  <Col>
+                  <Col md={6} className="mx-auto">
                     <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
                   </Col>
                 );
@@ -115,13 +115,13 @@ class MainView extends React.Component {
             render={({ match, history }) => {
               if (!user)
                 return (
-                  <Col>
+                  <Col md={6} className="mx-auto">
                     <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
                   </Col>
                 );
               if (movies.length === 0) return <div className="main-view" />;
               return (
-                <Col md={8}>
+                <Col md={6} className="mx-auto">
                   <DirectorView
                     director={
                       movies.find((m) => m.Director.Name === match.params.name)
@@ -139,13 +139,13 @@ class MainView extends React.Component {
             render={({ match, history }) => {
               if (!user)
                 return (
-                  <Col>
+                  <Col md={6} className="mx-auto">
                     <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
                   </Col>
                 );
               if (movies.length === 0) return <div className="main-view" />;
               return (
-                <Col md={8}>
+                <Col md={6} className="mx-auto">
                   <GenreView
                     genre={
                       movies.find((m) => m.Genre.Name === match.params.name)
@@ -162,7 +162,7 @@ class MainView extends React.Component {
             render={() => {
               if (user) return <Redirect to="/" />;
               return (
-                <Col>
+                <Col md={6} className="mx-auto">
                   <RegistrationView />
                 </Col>
               );
@@ -173,7 +173,7 @@ class MainView extends React.Component {
             render={({ match, history }) => {
               if (!user) return <Redirect to="/" />;
               return (
-                <Col>
+                <Col md={6} className="mx-auto">
                   <ProfileView
                     movies={movies}
                     user={user}

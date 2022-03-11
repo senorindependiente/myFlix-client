@@ -178,9 +178,9 @@ input[type=password] {
 
 
 .navbar {
-  margin-bottom: 5rem;
+  width: 100%;
   font-family: "Cuprum", sans-serif;
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  border-bottom: #fff 2px solid;
 }
 
 .nav-link {
@@ -211,12 +211,21 @@ input[type=password] {
   transition: 0.5s;
 }
 
+button {
+  background: #565656;
+  border-radius: 5px;
+  padding: 0.4rem 1rem;
+  border: #e2b659 1px solid;
+  transition: 0.5s;
+}
+
 .signup button:hover {
   opacity: 0.8;
 }
 
 .signout {
   border: none;
+  text-align: left;
 }
 
 .signout button:hover {
