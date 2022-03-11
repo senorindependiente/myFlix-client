@@ -70,7 +70,7 @@ class MainView extends React.Component {
     return (
       <Router>
         <NavbarView user={user} />
-        <Row className="main-view justify-content-md-center">
+        <Row className="main-view " > 
           <Route
             exact
             path="/"
@@ -83,7 +83,7 @@ class MainView extends React.Component {
                 );
               if (movies.length === 0) return <div className="main-view" />;
               return movies.map((m) => (
-                <Col md={3} key={m._id}>
+                <Col md={6} key={m._id}>
                   <MovieCard movie={m} />
                 </Col>
               ));
@@ -101,7 +101,7 @@ class MainView extends React.Component {
                 );
               if (movies.length === 0) return <div className="main-view"></div>;
               return (
-                <Col md={8}>
+                <Col md={6}>
                   <MovieView
                     movie={movies.find((m) => m._id === match.params.movieId)}
                     onBackClick={() => history.goBack()}

@@ -1,6 +1,6 @@
 $primary-font: "Cuprum", sans-serif;
 $secondary-font: "Alfa Slab One", cursive;
-$primary-color: linear-gradient(220.55deg, #565656 0%, #181818 100%);
+$primary-color: #565656;
 $secondary-color: #fff;
 $third-color: #e2b659;
 
@@ -24,20 +24,31 @@ $third-color: #e2b659;
 }
 
 .movie-view {
-  margin:1rem;
+  margin: 1rem;
   font-family: $primary-font;
 }
 
-.movie-title {
+.title {
   font-family: $secondary-font;
+  font-size: 2rem;
 }
 
 .button {
-  text-decoration: none;
-
   @include buttonstyle();
 }
 
 .button:hover {
   opacity: 0.8;
 }
+
+.cardgroup button {
+  margin-left: -1rem;
+//   font-size: 1.1rem;
+//   background: linear-gradient(to right, #a2f71b, #8b8df3);
+//   -webkit-background-clip: text;
+//   -webkit-text-fill-color: transparent;
+}
+
+// .cardgroup button:hover{
+//   opacity: 0.8;
+// }

@@ -115,6 +115,28 @@ class ProfileView extends React.Component {
       });
   };
 
+  addFavorite = (e, movie) => {
+    e.preventDefault();
+    const Username = localStorage.getItem("user");
+    const token = localStorage.getItem("token");
+
+    axios
+      .post(
+        `https://movieapiapp.herokuapp.com/users/${Username}/movies/${movie._id}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
+      .then((response) => {
+        console.log(response);
+        alert("Movie added");
+        this.componentDidMount();
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
   deleteUser() {
     const Username = localStorage.getItem("user");
     const token = localStorage.getItem("token");
@@ -257,7 +279,7 @@ class ProfileView extends React.Component {
               {FavoriteMovie.length === 0 && (
                 <div className="text-center">No Favorite Movies</div>
               )}
-              
+
               <Row className="favorite-container">
                 {FavoriteMovie.length > 0 &&
                   movies.map((movie) => {
@@ -266,19 +288,14 @@ class ProfileView extends React.Component {
                       FavoriteMovie.find((fav) => fav === movie._id)
                     ) {
                       return (
-                        <Card
-                          key={movie._id}
-                        >
-                          <Card.Img
-                    
-                            variant="top"
-                            src={movie.ImagePath}
-                          />
+                        <Card key={movie._id}>
+                          <Card.Img variant="top" src={movie.ImagePath} />
                           <Card.Body>
                             <Card.Title className="movie_title">
                               {movie.Title}
                             </Card.Title>
-                            <button className="button2"
+                            <button
+                              className="button2"
                               value={movie._id}
                               onClick={(e) => this.removeFavorite(e, movie)}
                             >
@@ -309,22 +326,23 @@ class ProfileView extends React.Component {
 }
 export default ProfileView;
 
-
 ProfileView.propTypes = {
-  movies: PropTypes.arrayOf(PropTypes.shape({
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
       Title: PropTypes.string.isRequired,
       Description: PropTypes.string.isRequired,
       ImagePath: PropTypes.string.isRequired,
       Genre: PropTypes.shape({
-          Name: PropTypes.string.isRequired,
-          Description: PropTypes.string.isRequired,
+        Name: PropTypes.string.isRequired,
+        Description: PropTypes.string.isRequired,
       }).isRequired,
       Director: PropTypes.shape({
-          Bio: PropTypes.string.isRequired,
-          Birth: PropTypes.string.isRequired,
-          Death: PropTypes.string,
-          Name: PropTypes.string.isRequired,
+        Bio: PropTypes.string.isRequired,
+        Birth: PropTypes.string.isRequired,
+        Death: PropTypes.string,
+        Name: PropTypes.string.isRequired,
       }).isRequired,
-  })).isRequired,
-  onBackClick: PropTypes.func.isRequired
+    })
+  ).isRequired,
+  onBackClick: PropTypes.func.isRequired,
 };

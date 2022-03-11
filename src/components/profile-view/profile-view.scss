@@ -55,13 +55,20 @@ Form {
 
 
 
-.button:hover {
+.button a:hover {
   opacity: 0.8;
+  color:$secondary-color;
+  margin-bottom: 2rem;
+}
+
+.button{
+  margin-bottom: 2rem;
+
 }
 
 .button2 a{
   text-decoration: none;
-  color:#e2b659;
+  color:$third-color;
 }
 .button2:hover {
   opacity: 0.8;

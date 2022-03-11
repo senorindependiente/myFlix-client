@@ -19,7 +19,7 @@ class GenreView extends React.Component {
       return (
         <div className="movie-view">
           <div className="movie-title">
-            <span className="label">Name: </span>
+
             <span className="value">{genre.Name}</span>
           </div>
           <div className="movie-description">

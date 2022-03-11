@@ -2,7 +2,7 @@ import React from "react";
 import "./movie-view.scss";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
+import { Button, Card, CardGroup, Container } from "react-bootstrap";
 class MovieView extends React.Component {
   keypressCallback(event) {
     alert(event.key);
@@ -18,35 +18,56 @@ class MovieView extends React.Component {
   render() {
     const { movie, onBackClick } = this.props; //this would in a function based component just "props" as a parameter in the function ot access data as an object
     return (
-      <div className="movie-view">
-        <div className="movie-poster">
-          <img src={movie.ImagePath} />
-        </div>
-        <div className="movie-title">
-          <span className="label">Title: </span>
-          <span className="value">{movie.Title}</span>
-        </div>
-        <div className="movie-description">
-          <span className="label">Description: </span>
-          <span className="value">{movie.Description}</span>
-        </div>
-        <button
-          className="button"
-          onClick={() => {
-            onBackClick(null);
-          }}
-        >
-          Back
-        </button>
+      <Container className="container">
+        <Card className="card">
+          <Card.Body>
+            <div className="movie-view">
+              <div className="movie-poster">
+                <img src={movie.ImagePath} />
+              </div>
+              <Card.Title>
+                <span className="value title">{movie.Title} </span>
+                <button>
+                  <img src="" alt="add to favorite" />
+                </button>{" "}
+              </Card.Title>
 
-        <Link to={`/directors/${movie.Director.Name}`}>
-          <Button variant="link">Director</Button>
-        </Link>
+              <CardGroup className="cardgroup">
+                <Card.Text>
+                  <Link
+                    className="director"
+                    to={`/directors/${movie.Director.Name}`}
+                  >
+                    <Button variant="link">
+                      Director: {movie.Director.Name}
+                    </Button>
+                  </Link>
+                </Card.Text>
+                <Card.Text>
+                  <Link className="genre" to={`/genres/${movie.Genre.Name}`}>
+                    <Button variant="link">Genre: {movie.Genre.Name}</Button>
+                  </Link>
+                </Card.Text>
+              </CardGroup>
 
-        <Link to={`/genres/${movie.Genre.Name}`}>
-          <Button variant="link">Genre</Button>
-        </Link>
-      </div>
+              <Card.Text className="movie-description">
+                <span className="label">Description: </span>
+              </Card.Text>
+              <Card.Text>
+                <span className="value">{movie.Description}</span>
+              </Card.Text>
+              <button
+                className="button"
+                onClick={() => {
+                  onBackClick(null);
+                }}
+              >
+                Back
+              </button>
+            </div>
+          </Card.Body>
+        </Card>
+      </Container>
     );
   }
 }
