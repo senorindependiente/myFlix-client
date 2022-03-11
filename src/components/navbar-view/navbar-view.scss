@@ -15,7 +15,8 @@ $third-color: #e2b659;
 .navbar {
   margin-bottom: 5rem;
   font-family: $primary-font;
-  
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+
 
 }
 
@@ -23,8 +24,7 @@ $third-color: #e2b659;
   margin-right: 2rem;
   color: $secondary-color !important;
   transition: 0.5s;
-  letter-spacing: 0.1rem;
-  font-size: 1.1rem;
+ 
 }
 
 .nav-link:hover {
@@ -32,6 +32,7 @@ $third-color: #e2b659;
 }
 
 .text-gradient {
+  margin-left:1rem;
   font-family: $secondary-font;
   font-size: 3rem;
   font-weight: 400;
@@ -49,11 +50,10 @@ $third-color: #e2b659;
 }
 
 .signout {
-  background-color: $primary-color;
-  color: #e2b659;
-  border: none;
-  border-radius: 5px;
-  padding: 0.4rem 1rem;
+  @include buttonstyle2();
+}
+.signout button:hover {
+  opacity: 0.8;
 }
 
 .users,
