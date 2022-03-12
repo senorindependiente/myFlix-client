@@ -3,14 +3,14 @@
   color: #fff;
 }
 
-.movie-view {
-  margin: 1rem;
-  font-family: "Cuprum", sans-serif;
+.card {
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
 .title {
   font-family: "Alfa Slab One", cursive;
   font-size: 2rem;
+  text-transform: uppercase;
 }
 
 .button {
@@ -28,7 +28,7 @@
 }
 
 .cardgroup button {
-  margin: 2rem 0rem;
+  margin: 1rem 0rem;
   text-decoration: none !important;
   font-size: 1.1rem;
   border-radius: 5px;
@@ -37,6 +37,17 @@
 
 .genre {
   padding-left: 5rem;
+}
+
+.add {
+  color: #e2b659;
+  font-size: 2.5rem;
+  border: none;
+  transition: 0.3;
+}
+
+.add:hover {
+  opacity: 0.6;
 }
 * {
   background: #565656;
@@ -159,6 +170,8 @@ input[type=password] {
 
 .card-title {
   font-family: "Alfa Slab One", cursive;
+  font-size: 3rem;
+  text-transform: uppercase;
 }
 
 .button a {
@@ -176,14 +189,25 @@ input[type=password] {
   opacity: 0.8;
 }
 
+.mistery {
+  margin-bottom: 1rem;
+}
+.brand,
+.collapse,
+.nav {
+  background-color: #5B5B5B;
+}
 
 .navbar {
+  padding-bottom: 2rem;
   width: 100%;
   font-family: "Cuprum", sans-serif;
-  border-bottom: #fff 2px solid;
+  border-bottom: #fff 1px solid;
+  background-color: #5B5B5B;
 }
 
 .nav-link {
+  background-color: #5B5B5B;
   margin-right: 2rem;
   color: #fff !important;
   transition: 0.5s;
@@ -196,7 +220,7 @@ input[type=password] {
 .text-gradient {
   margin-left: 1rem;
   font-family: "Alfa Slab One", cursive;
-  font-size: 3rem;
+  font-size: 2.2rem;
   font-weight: 400;
   background: linear-gradient(to right, #30cfd0, #c43ad6);
   -webkit-background-clip: text;

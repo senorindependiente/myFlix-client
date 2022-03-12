@@ -56,9 +56,9 @@ class MovieView extends React.Component {
             </div>
             <Card.Title>
               <span className="value title">{movie.Title} </span>
-              <button>
-                <img src="" alt="add to favorite" />
-              </button>{" "}
+              <button className="add">
+                &#9734;
+              </button>
             </Card.Title>
 
             <CardGroup className="cardgroup">

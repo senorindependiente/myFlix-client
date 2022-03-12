@@ -21,12 +21,12 @@ function NavbarView({ user }) {
   };
 
   return (
-    <Navbar className="navbar" expand="md" sticky="top">
+    <Navbar className="navbar" expand="md">
       <Navbar.Brand className="brand" href="/"> < span className="text-gradient">
        myFlix </span></Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="ms-auto">
+      <Navbar.Collapse className="collapse" id="basic-navbar-nav">
+        <Nav className=" nav ms-auto">
           <Nav.Link className="nav-link movies" href="/">Movies</Nav.Link>
 
           {isAuth() && <Nav.Link className="nav-link users" href={`/users/${user}`}>User</Nav.Link>}
