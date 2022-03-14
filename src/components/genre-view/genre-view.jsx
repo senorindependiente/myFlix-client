@@ -20,7 +20,7 @@ class GenreView extends React.Component {
       return (
         <Card className="movie-view">
           <Card.Body >
-<Card.Title class="mistery">
+<Card.Title className="mistery">
             <span className="value title">{genre.Name}</span>
           </Card.Title>
           <div className="movie-description">
