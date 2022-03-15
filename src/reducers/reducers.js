@@ -1,4 +1,4 @@
-import { func } from "prop-types";
+
 import { combineReducers } from "redux";
 
 import { SET_FILTER, SET_MOVIES } from "../actions/actions";
@@ -20,6 +20,8 @@ function visibilityFilter (state = "", action){
 function movies(state=[], action){
     switch(action.type){
         case SET_MOVIES:
+
+        console.log("SET_MOVIES reducer reached")
             return action.value;
             default:
                 return state;

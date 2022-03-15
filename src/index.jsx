@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import MainView from "./components/main-view/main-view";
-import { Container } from "react-bootstrap";
+import  { Container } from "react-bootstrap";
 import { createStore } from "redux";
-import { Provider } from "react-redux";
+import {Provider } from "react-redux";
 import moviesApp from "./reducers/reducers";
 import { devToolsEnhancer } from "redux-devtools-extension";
 
@@ -20,7 +20,7 @@ class MyFlixApplication extends React.Component {
       // wrapping entire app in a provider that comes from react redux
       <Provider store={store}>
         <Container fluid="md">
-          <MainView className="main-view"/>
+          <MainView />
         </Container>
       </Provider>
     );

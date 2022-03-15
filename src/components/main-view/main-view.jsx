@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 
 import { setMovies } from "../../actions/actions";
-import MoviesList from "../movies-list/movies-list";
+import {MoviesList } from "../movies-list/movies-list";
 /* 
   #1 The rest of components import statements but without the MovieCard's 
   because it will be imported and used in the MoviesList component rather
@@ -43,6 +43,7 @@ class MainView extends React.Component {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
+        console.log('setMovies: ', response.data);
         this.props.setMovies(response.data);
       })
       .catch(function (error) {
@@ -97,16 +98,16 @@ class MainView extends React.Component {
           <Route
             exact
             path="/"
-            render={({ history }) => {
+            render={() => {
               if (!user)
                 return (
                   <Col md={6} className="mx-auto">
                     <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
                   </Col>
                 );
-              if (movies.length === 0) return <div className="main-view"></div>;
+              if (movies.length === 0) return <div className="main-view"/>;
 
-              return <MoviesList movies={movies} />; //here is the mistake
+               return <MoviesList movies={movies} />
             }}
           />
 
