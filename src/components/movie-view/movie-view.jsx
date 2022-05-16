@@ -26,8 +26,7 @@ class MovieView extends React.Component {
   render() {
     const { movie, onBackClick } = this.props; //this would in a function based component just "props" as a parameter in the function ot access data as an object
 
-    {
-      /* <Row>
+    /* <Row>
                 {FavoriteMovie.length > 0 &&
                   movies.map((movie) => {
                     if (
@@ -45,7 +44,6 @@ class MovieView extends React.Component {
                     }
                   })}
               </Row> */
-    }
 
     return (
       <Container className="container">
@@ -56,9 +54,7 @@ class MovieView extends React.Component {
             </div>
             <Card.Title>
               <span className="value title">{movie.Title} </span>
-              <button className="add">
-                &#9734;
-              </button>
+              <button className="add">&#9734;</button>
             </Card.Title>
 
             <CardGroup className="cardgroup">

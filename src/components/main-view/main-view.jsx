@@ -1,12 +1,13 @@
 import React from "react";
 import axios from "axios"; //importing library Axios
 
+
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
 import { connect } from "react-redux";
 
-import { setMovies } from "../../actions/actions";
-import {MoviesList } from "../movies-list/movies-list";
+import  {setMovies}  from "../../actions/actions";
+import  {MoviesList}  from "../movies-list/movies-list";
 /* 
   #1 The rest of components import statements but without the MovieCard's 
   because it will be imported and used in the MoviesList component rather
@@ -25,7 +26,7 @@ import NavbarView from "../navbar-view/navbar-view";
 import ProfileView from "../profile-view/profile-view";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import NavbarView from "../navbar-view/navbar-view";
+
 class MainView extends React.Component {
   constructor() {
     super();
@@ -43,7 +44,7 @@ class MainView extends React.Component {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
-        console.log('setMovies: ', response.data);
+        console.log("setMovies: ", response.data);
         this.props.setMovies(response.data);
       })
       .catch(function (error) {
@@ -90,7 +91,10 @@ class MainView extends React.Component {
     // movies is extracted from this.props rather than from the this.state
     let { movies } = this.props;
     let { user } = this.state;
+    console.log("these are my movies");
+    console.log(movies);
 
+    console.log(user);
     return (
       <Router>
         <NavbarView user={user} />
@@ -105,9 +109,10 @@ class MainView extends React.Component {
                     <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
                   </Col>
                 );
-              if (movies.length === 0) return <div className="main-view"/>;
+              if (!movies) return <div className="main-view" />;
 
-               return <MoviesList movies={movies} />
+              return <MoviesList movies={movies} />;
+            
             }}
           />
 

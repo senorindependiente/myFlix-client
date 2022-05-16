@@ -146,7 +146,6 @@ input[type=text] {
 input[type=password] {
   background: #fff;
 }
-
 * {
   background: #565656;
   color: #fff;
@@ -192,6 +191,69 @@ input[type=password] {
 .mistery {
   margin-bottom: 1rem;
 }
+* {
+  background: #565656;
+  color: #fff;
+}
+
+Form {
+  font-family: "Cuprum", sans-serif;
+}
+
+.form-label {
+  margin: 1rem 0rem;
+}
+
+.button {
+  background: #e2b659;
+  font-family: "Cuprum", sans-serif;
+  border-radius: 5px;
+  padding: 0.4rem 1rem;
+  border: none;
+  margin-top: 1rem;
+  transition: 0.5s;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.button2 {
+  background: #565656;
+  font-family: "Cuprum", sans-serif;
+  border-radius: 5px;
+  padding: 0.4rem 1rem;
+  border: #e2b659 1px solid;
+  margin-top: 1rem;
+  margin-left: 2rem;
+  transition: 0.5s;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.button a:hover {
+  opacity: 0.8;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.button {
+  margin-bottom: 2rem;
+}
+
+.button2 a {
+  text-decoration: none;
+  color: #e2b659;
+}
+
+.button2:hover {
+  opacity: 0.8;
+}
+
+input[type=text] {
+  background: #fff;
+}
+
+input[type=password] {
+  background: #fff;
+}
+
 .brand,
 .collapse,
 .nav {
@@ -260,68 +322,6 @@ button {
 .signin,
 .movies {
   font-weight: 100;
-}
-* {
-  background: #565656;
-  color: #fff;
-}
-
-Form {
-  font-family: "Cuprum", sans-serif;
-}
-
-.form-label {
-  margin: 1rem 0rem;
-}
-
-.button {
-  background: #e2b659;
-  font-family: "Cuprum", sans-serif;
-  border-radius: 5px;
-  padding: 0.4rem 1rem;
-  border: none;
-  margin-top: 1rem;
-  transition: 0.5s;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-}
-
-.button2 {
-  background: #565656;
-  font-family: "Cuprum", sans-serif;
-  border-radius: 5px;
-  padding: 0.4rem 1rem;
-  border: #e2b659 1px solid;
-  margin-top: 1rem;
-  margin-left: 2rem;
-  transition: 0.5s;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-}
-
-.button a:hover {
-  opacity: 0.8;
-  color: #fff;
-  margin-bottom: 2rem;
-}
-
-.button {
-  margin-bottom: 2rem;
-}
-
-.button2 a {
-  text-decoration: none;
-  color: #e2b659;
-}
-
-.button2:hover {
-  opacity: 0.8;
-}
-
-input[type=text] {
-  background: #fff;
-}
-
-input[type=password] {
-  background: #fff;
 }
 .my-flix {
   color: steelblue;
