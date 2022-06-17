@@ -50,7 +50,7 @@ class MovieView extends React.Component {
         <Card>
           <Card.Body>
             <div className="movie-poster">
-              <img src={movie.ImagePath} />
+              <img crossOrigin="anonymous" src={movie.ImagePath} />
             </div>
             <Card.Title>
               <span className="value title">{movie.Title} </span>

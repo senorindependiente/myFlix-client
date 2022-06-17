@@ -13,6 +13,7 @@ class MovieCard extends React.Component {
             <Card.Img
               className="card-img"
               variant="top"
+              crossOrigin="anonymous"
               src={movie.ImagePath}
             />
             <Card.Body className="card-body">

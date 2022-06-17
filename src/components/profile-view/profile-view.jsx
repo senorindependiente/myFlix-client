@@ -296,7 +296,7 @@ class ProfileView extends React.Component {
                           key={movie._id}
                         >
                           <Card.Img 
-                    
+                    className="pic"
                             variant="top"
                             src={movie.ImagePath}
                           />

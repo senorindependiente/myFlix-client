@@ -1,13 +1,12 @@
 import React from "react";
 import axios from "axios"; //importing library Axios
 
-
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
 import { connect } from "react-redux";
 
-import  {setMovies}  from "../../actions/actions";
-import  {MoviesList}  from "../movies-list/movies-list";
+import { setMovies } from "../../actions/actions";
+
 /* 
   #1 The rest of components import statements but without the MovieCard's 
   because it will be imported and used in the MoviesList component rather
@@ -26,7 +25,7 @@ import NavbarView from "../navbar-view/navbar-view";
 import ProfileView from "../profile-view/profile-view";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-
+import {MoviesList} from '../movies-list/movies-list';
 class MainView extends React.Component {
   constructor() {
     super();
@@ -109,10 +108,9 @@ class MainView extends React.Component {
                     <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
                   </Col>
                 );
-              if (!movies) return <div className="main-view" />;
+                if (movies.length === 0) return <div className="main-view" />
 
-              return <MoviesList movies={movies} />;
-            
+                // return <MoviesList movies={movies}/>;
             }}
           />
 
