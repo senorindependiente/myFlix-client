@@ -1,9 +1,6 @@
 # myFlix
-<<<<<<< HEAD
+
 ### A client-side application, created with React.js and Sass, called myFlix based on its existing server-side code (REST API and database)
-=======
-A client-side application, created with React.js and Sass, called myFlix based on its existing server-side code (REST API and database)
->>>>>>> cd1d3693e5f157308a903863365139a62e1269c2
 
 > Live demo [_here_](https://www.example.com). <!-- If you have the project hosted somewhere, include the link here. -->
 
@@ -13,33 +10,24 @@ A client-side application, created with React.js and Sass, called myFlix based o
 * [Features](#features)
 * [Screenshots](#screenshots)
 * [Setup](#setup)
-* [Usage](#usage)
-* [Project Status](#project-status)
-* [Room for Improvement](#room-for-improvement)
-* [Acknowledgements](#acknowledgements)
-* [Contact](#contact)
-<!-- * [License](#license) -->
-
 
 ## General Information
-- Provide general information about your project here.
-- What problem does it (intend to) solve?
-- What is the purpose of your project?
-- Why did you undertake it?
-<!-- You don't have to answer all the questions - just the ones relevant to your project. -->
-
+Application that shows the user information about different movies like director, genre and summary. The user can also add/delete favorite movies to his personal profile once the user is registered and logged in. All the user authorization and movie information is taken from an external API.
 
 ## Technologies Used
-- Tech 1 - version 1.0
-- Tech 2 - version 2.0
-- Tech 3 - version 3.0
+- React.js
+- Bootstrap
+- Sass
+- Node.js
 
 
 ## Features
-List the ready features here:
-- Awesome feature 1
-- Awesome feature 2
-- Awesome feature 3
+- Users can login ot register for an account at the welcome view.
+- Users are registered successfully and then be able to see a list of movies
+- Users can see movie, genre and director details as well as a short summary of the movie
+- Users can add movie to a personal favorite list
+- Users can remove movies from the personal favorite list
+- Users can change profile details and delete profile
 
 
 ## Screenshots
@@ -53,42 +41,4 @@ What are the project requirements/dependencies? Where are they listed? A require
 Proceed to describe how to install / setup one's local environment / get started with the project.
 
 
-## Usage
-How does one go about using it?
-Provide various use cases and code examples here.
 
-`write-your-code-here`
-
-
-## Project Status
-Project is: _in progress_ / _complete_ / _no longer being worked on_. If you are no longer working on it, provide reasons why.
-
-
-## Room for Improvement
-Include areas you believe need improvement / could be improved. Also add TODOs for future development.
-
-Room for improvement:
-- Improvement to be done 1
-- Improvement to be done 2
-
-To do:
-- Feature to be added 1
-- Feature to be added 2
-
-
-## Acknowledgements
-Give credit here.
-- This project was inspired by...
-- This project was based on [this tutorial](https://www.example.com).
-- Many thanks to...
-
-
-## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
-
-
-<!-- Optional -->
-<!-- ## License -->
-<!-- This project is open source and available under the [... License](). -->
-
-<!-- You don't have to include all sections - just the one's relevant to your project -->

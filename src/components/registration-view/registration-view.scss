@@ -1,0 +1,60 @@
+$primary-font: "Cuprum", sans-serif;
+$secondary-font: "Alfa Slab One", cursive;
+$primary-color: #565656;
+$secondary-color: #fff;
+$third-color: #e2b659;
+
+@mixin buttonstyle {
+  background: $third-color;
+  border-radius: 5px;
+  padding: 0.4rem 1rem;
+  border: none;
+  margin-top: 1rem;
+  transition: 0.5s;
+}
+
+@mixin darktheme {
+  background: $primary-color;
+  color: $secondary-color;
+}
+
+* {
+  @include darktheme();
+}
+
+.container {
+  margin: 1rem 0rem;
+  height: 100vh;
+}
+
+Form {
+  font-family: $primary-font;
+}
+
+
+
+.card-header {
+  color: $secondary-color;
+  font-size: 1.4rem;
+  font-family: $secondary-font;
+}
+
+
+
+.form-label {
+  margin: 1rem 0rem;
+}
+
+.button {
+  @include buttonstyle();
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+
+
+input[type="text"] {
+  background: $primary-color;
+}
