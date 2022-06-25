@@ -8,8 +8,8 @@
 * [General Info](#general-information)
 * [Technologies Used](#technologies-used)
 * [Features](#features)
-* [Screenshots](#screenshots)
-* [Setup](#setup)
+
+
 
 ## General Information
 Application that shows the user information about different movies like director, genre and summary. The user can also add/delete favorite movies to his personal profile once the user is registered and logged in. All the user authorization and movie information is taken from an external API.
@@ -30,15 +30,8 @@ Application that shows the user information about different movies like director
 - Users can change profile details and delete profile
 
 
-## Screenshots
-![Example screenshot](./img/screenshot.png)
-<!-- If you have screenshots you'd like to share, include them here. -->
 
 
-## Setup
-What are the project requirements/dependencies? Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located?
-
-Proceed to describe how to install / setup one's local environment / get started with the project.
 
 
 
